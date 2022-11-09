@@ -10,7 +10,7 @@ Run some tests on request/response mangling with Dshackle
    we use to detect request-response mangling.
 
    ```sh
-   node src/proxy.js 9585 https://cloudflare-eth.com/v1/mainnet
+   node src/proxy.js 9545 https://cloudflare-eth.com/v1/mainnet
    ```
 
 2. Simultaneously run Dshackle with the specified
