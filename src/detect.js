@@ -1,3 +1,8 @@
+/**
+ * Simple script that repeadly generates random `proxy_echo` batched JSON RPC
+ * requests and executes them until a mis-match is found.
+ */
+
 const fetch = require("node-fetch");
 
 const [cmd, path, remote, ...rest] = process.argv;

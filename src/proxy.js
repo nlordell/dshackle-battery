@@ -1,3 +1,9 @@
+/**
+ * Simple JSON RPC reverse proxy that intercepts and handles a custom
+ * `proxy_echo` RPC method that just echos its paramters. This is helpful for
+ * detecting request-response mangling.
+ */
+
 const http = require("http");
 const fetch = require("node-fetch");
 
@@ -59,6 +65,7 @@ function handler(req, res) {
       .then(async (rpc) => {
         const status = rpc.status;
         const body = await rpc.text();
+
         try {
           const result = JSON.parse(body);
 

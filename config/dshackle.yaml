@@ -8,6 +8,10 @@ cluster:
   upstreams:
     - id: proxy
       chain: ethereum
+      options:
+        role: primary
+        validate-peers: false
+        validate-syncing: false
       methods:
         enabled:
           - name: proxy_echo
