@@ -18,4 +18,4 @@ cluster:
       connection:
         ethereum:
           rpc:
-            url: "http://localhost:9000"
+            url: "http://localhost:9545"
