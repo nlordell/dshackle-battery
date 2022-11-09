@@ -1,0 +1,17 @@
+proxy:
+  port: 8545
+  routes:
+    - id: eth
+      blockchain: ethereum
+
+cluster:
+  upstreams:
+    - id: proxy
+      chain: ethereum
+      methods:
+        enabled:
+          - name: proxy_echo
+      connection:
+        ethereum:
+          rpc:
+            url: "http://localhost:9000"

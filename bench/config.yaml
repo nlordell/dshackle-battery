@@ -1,0 +1,25 @@
+config:
+  target: http://localhost:8545
+  phases:
+    - duration: 10 # 1800
+      arrivalRate: 20
+      name: Peak Load
+  processor: "./processor.js"
+ 
+scenarios:
+  - name: "batch"
+    beforeRequest: prepareBatch
+    afterResponse: checkResponses
+    flow:
+      - post:
+          url: "/eth"
+          json: {}
+  - name: "single"
+    beforeRequest: prepareCall
+    afterResponse: checkResponses
+    flow:
+      - loop:
+          - post:
+              url: "/eth"
+              json: {}
+        count: 50
